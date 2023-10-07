@@ -7,7 +7,7 @@ using namespace std;
 int main()
 {
 
-    int broj;
+    int n;
 
     cin>>broj;
 
