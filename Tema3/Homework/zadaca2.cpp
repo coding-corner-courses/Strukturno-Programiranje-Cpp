@@ -12,7 +12,7 @@ int main()
 
     cin>>number;
 
-    if(number%10==61)
+    if(number%61==0)
     {
         cout<<"Brojot "<<number<<" e deliv so 61"<<endl;
     }
