@@ -18,7 +18,7 @@ int main()
     }
     else
     {
-        cout<<"Brojot "<<number<<"ne zavrsuva so 9"<<endl;
+        cout<<"Brojot "<<number<<" ne zavrsuva so 9"<<endl;
     }
 
     return 0;
