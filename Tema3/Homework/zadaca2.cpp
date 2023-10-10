@@ -18,7 +18,7 @@ int main()
     }
     else
     {
-        cout<<"Brojot "<<number<<"ne e deliv so 61"<<endl;
+        cout<<"Brojot "<<number<<" ne e deliv so 61"<<endl;
     }
 
     return 0;
