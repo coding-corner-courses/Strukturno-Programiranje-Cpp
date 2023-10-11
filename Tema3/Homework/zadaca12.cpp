@@ -12,8 +12,6 @@ int main()
 
     cin>>number1>>number2;
 
-    int maxNumber;
-
     if(number1<number2)
     {
         cout<<"Brojot "<<number1<<" e pomal od brojot "<<number2<<endl;
