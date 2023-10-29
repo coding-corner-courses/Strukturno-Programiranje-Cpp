@@ -16,9 +16,9 @@ int main()
     // Блок од изрази = опсег (scope)
     {
         bool isEven = number % 2 == 0;
-        cout<<"Result: "<<isEven<<endl;
-
     }
+
+    cout<<"Result: "<<isEven<<endl;
 
     return 0;
 }
