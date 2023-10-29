@@ -13,7 +13,7 @@ int main()
 
     int codeCharacter = (int) character;
 
-    if(codeCharacter >=65 && codeCharacter<=90){
+    if(codeCharacter >= 65 && codeCharacter <= 90){
         cout<<"UPPER CASE LETTER"<<endl;
     }
 
