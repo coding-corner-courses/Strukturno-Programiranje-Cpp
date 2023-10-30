@@ -18,25 +18,25 @@ int main()
         dayOfWeek = "Monday";
         break;
     case 2:
-        dayOfWeek ="Tuesday";
+        dayOfWeek = "Tuesday";
         break;
     case 3:
-        dayOfWeek ="Wednesday";
+        dayOfWeek = "Wednesday";
         break;
     case 4:
-        dayOfWeek= "Thursday";
+        dayOfWeek = "Thursday";
         break;
     case 5:
-        dayOfWeek ="Friday";
+        dayOfWeek = "Friday";
         break;
     case 6:
-        dayOfWeek ="Saturday";
+        dayOfWeek = "Saturday";
         break;
     case 7:
-        dayOfWeek ="Sunday";
+        dayOfWeek = "Sunday";
         break;
     default:
-        dayOfWeek="Invalid";
+        dayOfWeek = "Invalid";
     }
 
     cout<<dayOfWeek;
