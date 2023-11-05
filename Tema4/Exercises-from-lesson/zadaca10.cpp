@@ -12,7 +12,7 @@ int main()
 
     int factoriel = 1;
 
-    // 5! = 5 *4 * 3* 2* 1;
+    // 5! = 5*4*3*2*1;
     for(int i =1; i<=n; i++)
     {
         factoriel *= i;
