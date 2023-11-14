@@ -23,39 +23,46 @@ int main()
 
     bool parenEkvivalent = 1;
 
-    if(number2<number1)
+    if(number1<=0 || number2<=0)
     {
-        maxNumber = number1;
-        minNumber = number2;
-    }
-
-    while(minNumber!=0 && maxNumber!=0 && parenEkvivalent==1)
-    {
-
-        int minDigit = minNumber % 10;
-        int maxDigit = (maxNumber %100)/10;
-
-        minNumber = minNumber /10;
-        maxNumber = maxNumber /100;
-
-        if(minDigit != maxDigit)
-        {
-            parenEkvivalent = 0;
-        }
-    }
-
-    if(parenEkvivalent==1 && maxNumber!=0)
-    {
-        parenEkvivalent = 0;
-    }
-
-    if(parenEkvivalent==1)
-    {
-        cout<<"PAREN"<<endl;
+        cout<<"Invalid input"<<endl;
     }
     else
     {
-        cout<<"NE E PAREN"<<endl;
+        if(number2<number1)
+        {
+            maxNumber = number1;
+            minNumber = number2;
+        }
+
+        while(minNumber!=0 && maxNumber!=0 && parenEkvivalent==1)
+        {
+
+            int minDigit = minNumber % 10;
+            int maxDigit = (maxNumber %100)/10;
+
+            minNumber = minNumber /10;
+            maxNumber = maxNumber /100;
+
+            if(minDigit != maxDigit)
+            {
+                parenEkvivalent = 0;
+            }
+        }
+
+        if(parenEkvivalent==1 && maxNumber!=0)
+        {
+            parenEkvivalent = 0;
+        }
+
+        if(parenEkvivalent==1)
+        {
+            cout<<"PAREN"<<endl;
+        }
+        else
+        {
+            cout<<"NE E PAREN"<<endl;
+        }
     }
 
     return 0;
