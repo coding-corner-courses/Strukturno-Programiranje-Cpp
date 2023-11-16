@@ -15,8 +15,7 @@ using namespace std;
 int main()
 {
     char character;
-
-    cin>>character;
+    cin>>noskipws>>character;
 
     int number = 0;
     int sum = 0;
