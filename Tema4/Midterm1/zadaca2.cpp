@@ -24,7 +24,7 @@ int main()
     else
     {
 
-        int interestingNumber = 0;
+        int interestingNumber = 9;
 
         for(int i=10; i<n ; i++)
         {
@@ -46,14 +46,7 @@ int main()
             }
         }
 
-        if( interestingNumber!=0)
-        {
-            cout<<interestingNumber<<endl;
-        }
-        else
-        {
-            cout<<"Ne postoi interesen broj vo navedeniot rang"<<endl;
-        }
+        cout<<interestingNumber<<endl;
     }
 
     return 0;
