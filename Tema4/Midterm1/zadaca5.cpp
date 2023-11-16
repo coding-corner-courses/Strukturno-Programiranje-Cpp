@@ -50,7 +50,7 @@ int main()
             }
         }
 
-        if(parenEkvivalent==1 && maxNumber!=0)
+        if(parenEkvivalent==1 && maxNumber ==0)
         {
             parenEkvivalent = 0;
         }
@@ -61,7 +61,7 @@ int main()
         }
         else
         {
-            cout<<"NE E PAREN"<<endl;
+            cout<<"NE"<<endl;
         }
     }
 
