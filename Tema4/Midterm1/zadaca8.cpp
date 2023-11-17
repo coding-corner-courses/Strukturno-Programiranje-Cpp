@@ -19,7 +19,7 @@ int main()
 
     int totallyDifferent = 0;
 
-    for(int i=0; i<n; i++)
+    for(int i=n-1; i>0; i--)
     {
 
         int newNumberI = i;
@@ -51,6 +51,7 @@ int main()
         if(isTotallyDifferent==1)
         {
             totallyDifferent = i;
+            break;
         }
     }
 
