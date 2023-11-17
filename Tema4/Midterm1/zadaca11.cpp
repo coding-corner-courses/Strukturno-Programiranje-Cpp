@@ -34,7 +34,7 @@ int main()
     while(number!=0)
     {
 
-        if(number >= 10)
+        if(number > 10)
         {
 
             int newNumber = number;
