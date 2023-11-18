@@ -23,7 +23,7 @@ int main()
 
     cin>>number;
 
-    int minNumber = 0;
+    int minNumber = INT_MAX;
     int maxNumber = 0;
     int minEvenPositions = INT_MAX;
     int maxOddPositions = 0;
