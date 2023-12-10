@@ -14,7 +14,6 @@ int isPrime(int number)
 
         if(number % i == 0)
         {
-
             return 0;
         }
     }
