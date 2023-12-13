@@ -72,7 +72,6 @@ int main()
     bool strictlyIncreasing = isStrictlyIncreasing(numbers, n);
     bool strictlyDecreasing = isStrictlyDecreasing(numbers, n);
 
-
     if(strictlyIncreasing == 1){
         cout<<"STRICTLY INCREASING"<<endl;
     }
@@ -81,7 +80,6 @@ int main()
     }
     else {
         cout<<"NOR STRICTLY INCREASING, NOR STRICTLY DECREASING"<<endl;
-
     }
 
     return 0;
