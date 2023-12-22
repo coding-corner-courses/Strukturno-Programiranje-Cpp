@@ -10,11 +10,8 @@ using namespace std;
 // n - должина на низата
 void fillArray(int numbers[], int n)
 {
-
     for(int i=0; i<n; i++)
     {
-
-
         int number;
         cin>>number;
 
