@@ -23,28 +23,6 @@ void fillArray(int numbers[], int n)
     }
 }
 
-// Функција која ги печати по 5 елементи во ред
-// numbers - низа за која сакаме да ги отпечатиме елементите
-// n - должина на низата
-void printElements(int numbers[], int n)
-{
-
-    for(int i=0; i<n; i++)
-    {
-
-        cout<<numbers[i]<<" ";
-
-        if(i%5==4)
-        {
-            cout<<endl;
-        }
-        else
-        {
-            cout<<"\t";
-        }
-    }
-}
-
 int main()
 {
 
