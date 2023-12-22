@@ -22,7 +22,7 @@ void fillArray(int numbers[], int n)
 }
 
 // Функција наоѓање на сумата од парни вредности во низата
-// numbers - низа во која сакаме да ги внесиме вредностите 
+// numbers - низа која сакаме да ја провериме
 // n - должина на низата 
 int findSumOfEvenValues(int numbers[], int n)
 {
