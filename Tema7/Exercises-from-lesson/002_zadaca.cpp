@@ -40,15 +40,20 @@ double findHalfSum(int matrix[][5], int n, int m){
 
     int sum = 0;
 
+
+
     for(int i=0;i<n;i++){
 
         for(int j=0; j<m; j++){
 
-            sum+=matrix[i][j];
+            if(matrix[i][j]%10==0){
+
+                sum+=matrix[i][j];
+            }
         }
     }
 
-    return sum/2.0;
+    return sum *1.0/2;
 }
 
 int main()
@@ -61,7 +66,7 @@ int main()
 
     double halfSum = findHalfSum(matrix, 5, 5);
 
-    cout<<"Half sum: "<<halfSum<<endl;
+    cout<<"Result: "<<halfSum<<endl;
 
     return 0;
 }
