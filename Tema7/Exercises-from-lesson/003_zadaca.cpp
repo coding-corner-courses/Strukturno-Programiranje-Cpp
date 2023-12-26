@@ -40,17 +40,19 @@ void printMatrix(int matrix[][6], int n, int m)
     }
 }
 
-int findMax(int matrix[][6], int n, int m){
-
+int findMax(int matrix[][6], int n, int m)
+{
 
     int maxElement = matrix[0][0];
 
-    for(int i=0; i<n; i++){
+    for(int i=0; i<n; i++)
+    {
+        for(int j=0; j<m; j++)
+        {
+            if(maxElement<matrix[i][j])
+            {
 
-        for(int j=0;j<m;j++){
-
-            if(maxElement<matrix[i][j]){
-                maxElement = matrix[i][j];
+                maxElement=matrix[i][j];
             }
         }
     }
