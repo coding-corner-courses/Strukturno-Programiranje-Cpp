@@ -78,16 +78,23 @@ int main()
 
     printMatrix(matrix, n, m);
 
-    for(int i=0;i<n;i++){
-        for(int j=0;j<m;j++){
+    
+    // initialize the new matrix to have all -1
+    for(int i=0; i<n; i++)
+    {
+        for(int j=0; j<m; j++)
+        {
+            matrixWithoutDuplicates[i][j]=-1;
+        }
+    }
 
-            if(checkIfElementExist(matrix[i][j], matrixWithoutDuplicates, i, j)==0)
+    for(int i=0; i<n; i++)
+    {
+        for(int j=0; j<m; j++)
+        {
+            if(checkIfElementExist(matrix[i][j], matrixWithoutDuplicates, n, m)==0)
             {
                 matrixWithoutDuplicates[i][j]=matrix[i][j];
-            }
-            else{
-                matrixWithoutDuplicates[i][j]=-1;
-
             }
         }
     }
