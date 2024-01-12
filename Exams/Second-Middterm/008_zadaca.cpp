@@ -1,5 +1,4 @@
 #include <iostream>
-#include <cmath>
 #include <cstring>
 
 using namespace std;
@@ -46,65 +45,32 @@ void insertMatrix(char matrix[][50], int n, int m)
     }
 }
 
-void printMatrix(char matrix[][50], int n, int m)
-{
-
-    cout<<"Matrix: "<<endl;
-    for(int i=0; i<n; i++)
-    {
-
-        for(int j=0; j<m; j++)
-        {
-            cout<<matrix[i][j]<<"\t";
-        }
-
-        cout<<endl;
-    }
-}
-
-int checkByRowLeftToRight(char matrix[][50], int n, char findWord[])
+int checkHorizontally(char matrix[][50], int n, char findWord[])
 {
 
     for(int i=0; i<n; i++)
     {
         char word[n];
+        char reversedWord[n];
 
         for(int j=0; j<n; j++)
         {
             word[j]=matrix[i][j];
+            reversedWord[n-j-1]=matrix[i][j];
         }
 
         // converts c string to c++ string object, so we can use the find function
         int index= string(word).find(findWord);
+        int indexOfReversed = string(reversedWord).find(findWord);
 
         if(index!=-1)
         {
             cout<<i<<", "<<index<<" -> "<<i<<", "<<index+strlen(findWord)-1<<endl;
             return 1;
         }
-    }
-
-    return -1;
-}
-
-int checkByRowRightToLeft(char matrix[][50], int n, char findWord[])
-{
-
-    for(int i=0; i<n; i++)
-    {
-        char word[n];
-
-        for(int j=0; j<n; j++)
+        else if(indexOfReversed!=-1)
         {
-            word[n-j-1]=matrix[i][j];
-        }
-
-        // converts c string to c++ string object, so we can use the find function
-        int index= string(word).find(findWord);
-
-        if(index!=-1)
-        {
-            cout<<index<<", "<<i+1<<" -> "<<index+strlen(findWord)-1<<", "<<i+1<<endl;
+            cout<<indexOfReversed<<", "<<i+1<<" -> "<<indexOfReversed+strlen(findWord)-1<<", "<<i+1<<endl;
             return 1;
         }
     }
@@ -112,51 +78,34 @@ int checkByRowRightToLeft(char matrix[][50], int n, char findWord[])
     return -1;
 }
 
-int checkByColumnTopDown(char matrix[][50], int n, char findWord[])
+int checkVertically(char matrix[][50], int n, char findWord[])
 {
     //iterate by column
     for(int j=0; j<n; j++)
     {
         char word[n];
+        char reversedWord[n];
 
         // iterate by row
         for(int i=0; i<n; i++)
         {
             word[i]=matrix[i][j];
+            reversedWord[n-i-1]=matrix[i][j];
         }
 
         // converts c string to c++ string object, so we can use the find function
         int index= string(word).find(findWord);
+        int indexOfReversed = string(reversedWord).find(findWord);
 
         if(index!=-1)
         {
             cout<<index<<", "<<j<<" -> "<<index+strlen(findWord)-1<<", "<<j<<endl;
             return 1;
         }
-    }
-
-    return -1;
-}
-
-int checkByColumnDownTop(char matrix[][50], int n, char findWord[])
-{
-    //iterate by column
-    for(int j=0; j<n; j++)
-    {
-        char word[n];
-
-        // iterate by row
-        for(int i=0; i<n; i++)
+        else if(indexOfReversed!=-1)
         {
-            word[n-i-1]=matrix[i][j];
-        }
+            cout<<indexOfReversed+strlen(findWord)-1<<", "<<j<<" -> "<<indexOfReversed<<", "<<j<<endl;
 
-        // converts c string to c++ string object, so we can use the find function
-        int index= string(word).find(findWord);
-
-        if(index!=-1)
-        {
-            cout<<index+strlen(findWord)-1<<", "<<j<<" -> "<<index<<", "<<j<<endl;
             return 1;
         }
     }
@@ -178,26 +127,15 @@ int main()
     cin.ignore();
     cin.getline(word, MAX_LEN);
 
-    if(checkByRowLeftToRight(matrix, n, word)!=-1)
-    {
-        return 0;
-    }
-    
-    if(checkByColumnTopDown(matrix, n, word)!=-1)
+    if(checkHorizontally(matrix, n, word)!=-1)
     {
         return 0;
     }
 
-    if(checkByRowRightToLeft(matrix, n, word)!=-1)
+    if(checkVertically(matrix, n, word)!=-1)
     {
         return 0;
     }
-
-    if(checkByColumnDownTop(matrix, n, word)!=-1)
-    {
-        return 0;
-    }
-
 
     cout<<"Not Found"<<endl;
 
