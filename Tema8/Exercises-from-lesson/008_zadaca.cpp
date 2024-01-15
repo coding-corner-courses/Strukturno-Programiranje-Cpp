@@ -8,37 +8,35 @@ using namespace std;
 //Програмата е потребно да провери колку пати слогот се соддржи првовнесениот стринг. Да се игнорираат мали и големи карактери.
 //Резултатот да се отпечати.
 //
-//Пр. ponrtOnxyzonLMNoNOpgrsTUVwXyZ123
+//Пр. pоnrtOnxyzonLMNоNOpqrsTUVwXyZ123
 //       on
 //
 //Output: 4
 
-int countOccurence(char *mainWord, char *subWord)
-{
-    int counter = 0;
-    int subWordIndex=0;
+int countOcurrence(char *mainWord, char *subWord){
 
+    int counter = 0;
+    int index = 0;
 
     for(int i=0; i<strlen(mainWord); i++){
 
-        if(toupper(subWord[subWordIndex])!=toupper(mainWord[i]) && subWordIndex!=0 ){
-            subWordIndex=0;
+        if(toupper(mainWord[i])!= toupper(subWord[index]) && index!=0){
+            index=0;
         }
 
-        if(toupper(subWord[subWordIndex])==toupper(mainWord[i])){
-            subWordIndex++;
+        if(toupper(mainWord[i])== toupper(subWord[index])){
+            index++;
         }
 
-        if(subWordIndex==strlen(subWord))
-        {
+        if(index==strlen(subWord)){
+
+            index=0;
             counter++;
-            subWordIndex=0;
         }
     }
 
     return counter;
 }
-
 int main()
 {
     char mainWord[30];
@@ -47,7 +45,9 @@ int main()
     char subWord[30];
     cin>>subWord;
 
-    cout<<countOccurence(mainWord, subWord);
+    int result = countOcurrence(mainWord, subWord);
+
+    cout<<"Result: "<<result<<endl;
 
     return 0;
 }
