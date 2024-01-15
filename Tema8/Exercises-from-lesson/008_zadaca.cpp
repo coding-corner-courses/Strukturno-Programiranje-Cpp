@@ -13,22 +13,32 @@ using namespace std;
 //
 //Output: 4
 
-int countOcurrence(char *mainWord, char *subWord){
+int countOcurrence(char *mainWord, char *subWord)
+{
 
     int counter = 0;
     int index = 0;
 
-    for(int i=0; i<strlen(mainWord); i++){
+    for(int i=0; i<strlen(mainWord); i++)
+    {
 
-        if(toupper(mainWord[i])!= toupper(subWord[index]) && index!=0){
+        // Ако сме започнале со проверка на subWord (index!=0)
+        // и ако соодветните карактери се различни,
+        // тогаш сетирај го индексот на subWord да е 0
+        if(toupper(mainWord[i])!= toupper(subWord[index]) && index!=0)
+        {
             index=0;
         }
 
-        if(toupper(mainWord[i])== toupper(subWord[index])){
+        // Ако соодветните големи карактери се исти, тогаш зголеми го индексот на subWord
+        if(toupper(mainWord[i])== toupper(subWord[index]))
+        {
             index++;
         }
 
-        if(index==strlen(subWord)){
+        // Ако сме стигнале до крајот на subWord, тогаш сетирај го индексот на 0
+        if(index==strlen(subWord))
+        {
 
             index=0;
             counter++;
