@@ -9,7 +9,6 @@ using namespace std;
 //Sample Input: 1345789
 //Sample Output: Result-> 1-345-789
 
-
 void transformCharacters(char *characters)
 {
 
