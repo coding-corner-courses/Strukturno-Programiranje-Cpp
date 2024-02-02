@@ -54,7 +54,6 @@ void insertArray(int numbers[], int n)
     {
         if( !isspace(line[i]))
         {
-
             int digit = ((int)line[i]) - '0';
             previousDigit=previousDigit*10+digit;
         }
@@ -76,6 +75,7 @@ int main()
 
     cin.getline(firstLine, 100);
 
+    // converts string to integer
     int n=stoi(firstLine);
 
     int numbers[100];
