@@ -28,7 +28,7 @@ void insertArrayAndFindMainDigit(int numbers[], int n)
     int mainDigit;
 
     int maxIndex=0;
-    int mainMaxDigit=0;
+    int maxMainDigit=0;
 
 
     for(int i=0; i<n; i++)
@@ -39,9 +39,9 @@ void insertArrayAndFindMainDigit(int numbers[], int n)
 
         mainDigit = findMainDigit(number);
 
-        if(mainDigit>mainMaxDigit)
+        if(mainDigit>maxMainDigit)
         {
-            mainMaxDigit=mainDigit;
+            maxMainDigit=mainDigit;
             maxIndex=i;
         }
 
