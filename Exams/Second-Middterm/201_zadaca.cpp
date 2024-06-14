@@ -53,6 +53,5 @@ int main()
 
     cout<<charWithMinOcurrences<<" "<<minOccurences<<endl;
 
-
     return 0;
 }
