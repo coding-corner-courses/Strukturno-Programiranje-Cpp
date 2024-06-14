@@ -20,6 +20,7 @@ using namespace std;
 // 1023 = 21 + 1002
 // Излез: 21 1002
 
+// Ја наоѓа првата цифра од бројот, пр. за бројот 34567 ќе врати 3
 int findFirstDigit(int number){
 
     if(number<10){
