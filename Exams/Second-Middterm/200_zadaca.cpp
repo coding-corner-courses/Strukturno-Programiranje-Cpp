@@ -51,6 +51,5 @@ int main()
         cout<<"Nema!"<<endl;
     }
 
-
     return 0;
 }
