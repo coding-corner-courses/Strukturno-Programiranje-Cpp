@@ -12,11 +12,23 @@ using namespace std;
 // 44 = 10 + 34
 // Излез: 10 34
 
-// Бидејќи не го знам целосниот текст на задачата, имам две претпоставки направено
-// 1. Едноцифрените броеви неможе да се собирачи 
-// 2. Собирачите од кои се добива бројот секогаш се двоцифрени броеви
+// Пр. Внесен број 450
+// 450 = 45 + 405
+// Излез: 45 405
 
-// Доколку знаете како е точниот текст на задачата, контактирајте ме за да ја поправам задачата и решението
+// Пр. Внесен број 1023
+// 1023 = 21 + 1002
+// Излез: 21 1002
+
+int findFirstDigit(int number){
+
+    if(number<10){
+        return number;
+    }
+
+    return findFirstDigit(number/10);
+}
+
 int main()
 {
     int number;
@@ -32,11 +44,11 @@ int main()
 
         int secondAddend = number - firstAddend;
 
-        if(firstAddend>=10 && secondAddend>=10 && firstAddend<100 && secondAddend<100)
+        if(firstAddend>=10 && secondAddend>=10)
         {
 
-            int differenceFirstAddend = abs(firstAddend/10 - firstAddend%10);
-            int differenceSecondAddend = abs(secondAddend/10 - secondAddend%10);
+            int differenceFirstAddend = abs(findFirstDigit(firstAddend)- firstAddend%10);
+            int differenceSecondAddend = abs(findFirstDigit(secondAddend) - secondAddend%10);
 
             if(differenceFirstAddend==1 && differenceSecondAddend==1)
             {
