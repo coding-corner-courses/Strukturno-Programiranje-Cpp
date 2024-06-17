@@ -4,25 +4,28 @@ using namespace std;
 
 //Испит Јуни 13, 2024 (Задача 3)
 //Напиши програма каде што се внесува матрица преку тастатура.
-//Програмата е потребно да провери колку пати се содржи внесена колона во матрицата. Резултатот да се отпечати.
-//
+//Програмата е потребно да провери колку пати се содржи секоја колона во матрицата и да се отпечати
+//бројот на појавувања на колоната како прв ред во матрицата.
+
 //Пр.
 // Влез:
-// 3 4 
+// 3 4
 // 2    4	  5	  4
-// 1	  9	  0	  9
-// 2	  0	  1	  0
-// 4 9 0 
+// 1	9	  0	  9
+// 2    0	  1	  0
 
-// 4 9 0 - колона која ја бараме
 
-//Излез: 2
+//Излез:
+// 1   2     1    2
+// 2   4	  5	  4
+// 1	9	  0	  9
+// 2    0	  1	  0
+
 int main()
 {
     int n,m;
     cin>>n>>m;
     int matrix[10][10];
-    int column[n];
 
     // INSERT MATRIX
     for(int i=0; i<n; i++)
@@ -39,44 +42,59 @@ int main()
         }
     }
 
-    // INSERT COLUMN
-    for(int i=0; i<n; i++)
-    {
-        int number;
 
-        cin>>number;
-
-        column[i]=number;
-    }
-
-    int matchingColumns=0;
-
-    for(int j=0; j<m; j++)
+    // Iterate through columns
+    for(int columnIndex=0; columnIndex<m; columnIndex++)
     {
 
+        int column[n];
+        int matchingColumns=0;
 
-        // We make a prediction that the column that we are iterating through
-        // is equal with the one which was entered by the user
-        bool isMatching = true;
-
+        // Current column
         for(int i=0; i<n; i++)
         {
+            column[i]=matrix[i][columnIndex];
+        }
 
-            // if we find an element which is not equal, we can say that the columns are not equal
-            if(matrix[i][j]!=column[i])
+
+        // Compare all columns with the column which we iterate through
+        for(int j=0; j<m; j++)
+        {
+
+            // We make a prediction that the column that we are iterating through
+            // is equal with the one that is compared to
+            bool isMatching = true;
+
+            for(int i=0; i<n; i++)
             {
-                isMatching = false;
-                break;
+
+                if(matrix[i][j]!=column[i])
+                {
+                    isMatching = false;
+                }
+            }
+
+            if(isMatching)
+            {
+                matchingColumns++;
             }
         }
 
-        if(isMatching)
-        {
-            matchingColumns++;
-        }
+        cout<<matchingColumns<<"\t";
     }
 
-    cout<<matchingColumns<<endl;
+    cout<<endl;
+
+    // Print the matrix
+    for(int i=0; i<n; i++)
+    {
+        for(int j=0; j<m; j++)
+        {
+            cout<<matrix[i][j]<<"\t";
+        }
+
+        cout<<endl;
+    }
 
     return 0;
 }
